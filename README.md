@@ -1,16 +1,21 @@
-# flutter_test_app
+# Iterable Bottle Coffee
 
-A new Flutter project.
+![Catalog Screen]("screenshots/catalog_screen.png)
 
-## Getting Started
+## Description 
+Tester demo app built in Flutter to demonstrate Iterable's mobile capabilities
 
-This project is a starting point for a Flutter application.
+A few resources to get you up to speed with Flutter and with Iterable:
+Iterable
+- [Iterable Support](https://support.iterable.com/hc/en-us)
+- [Iterable API Docs](https://api.iterable.com/api/docs)
 
-A few resources to get you started if this is your first Flutter project:
-
+Flutter
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+
+![Login Screen]("screenshots/login_screen.png)
+![Cart Screen]("screenshots/cart_screen.png)
+
