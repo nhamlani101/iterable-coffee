@@ -1,6 +1,6 @@
 # Iterable Bottle Coffee
 
-![Catalog Screen]("screenshots/catalog_screen.png)
+![Catalog Screen](screenshots/catalog_screen.png)
 
 ## Description 
 Tester demo app built in Flutter to demonstrate Iterable's mobile capabilities
@@ -16,6 +16,6 @@ Flutter
 
 ## Screenshots
 
-![Login Screen]("screenshots/login_screen.png)
-![Cart Screen]("screenshots/cart_screen.png)
+![Login Screen](screenshots/login_screen.png)
+![Cart Screen](screenshots/cart_screen.png)
 
