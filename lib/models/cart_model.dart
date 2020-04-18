@@ -4,6 +4,15 @@ import 'item.dart';
 
 class CartModel extends ChangeNotifier {
   final List<Item> cartItems = [];
+  String _email;
+
+  void setEmail(String email) {
+    _email = email;
+  }
+
+  String get getEmail {
+    return _email;
+  }
 
   /// The current total price of all items.
   double get totalPrice {

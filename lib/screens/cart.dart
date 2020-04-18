@@ -8,9 +8,12 @@ class MyCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cart = Provider.of<CartModel>(context);
-    updateCart(cart.getCurrentCart);
+    updateCart(cart.getEmail, cart.getCurrentCart);
     return Scaffold(
-        appBar: AppBar(title: Text('Cart')),
+        appBar: AppBar(
+          title: Text('Cart'),
+          backgroundColor: Color(0xFF34C3F2),
+        ),
         body: Column(
           children: [
             Expanded(
@@ -53,19 +56,23 @@ class CartTotal extends StatelessWidget {
   Widget build(BuildContext context) {
     var cart = Provider.of<CartModel>(context);
     return Container(
-        height: 100,
-        color: Colors.blue,
-        child: ListTile(
-          leading: Text("Place Order"),
-          trailing: Text("\$" + total.toStringAsFixed(2)),
-          onTap: () {
-            trackPurchase(cart.getCurrentCart, total);
-            Scaffold.of(context).showSnackBar(
-                SnackBar(content: Text("You just purchased something")));
-            cart.clearAll();
-            Navigator.pop(context);
-          },
-        ));
+      margin: EdgeInsets.only(bottom: 50),
+      child: RaisedButton(
+        child: Text("Place Order: \$" + total.toStringAsFixed(2)),
+        onPressed: () {
+          trackPurchase(cart.getEmail, cart.getCurrentCart, total);
+          Scaffold.of(context).showSnackBar(
+              SnackBar(content: Text("You just purchased something")));
+          cart.clearAll();
+          Navigator.pop(context);
+        },
+        textColor: Colors.white,
+        padding: EdgeInsets.only(left: 20, right: 20),
+        shape:
+            RoundedRectangleBorder(borderRadius: new BorderRadius.circular(18)),
+        color: Color(0xFF34C3F2),
+      ),
+    );
   }
 }
 

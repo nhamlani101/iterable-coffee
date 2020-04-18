@@ -22,15 +22,15 @@ trackEvent() async {
   }
 }
 
-updateCart(List<Item> items) async {
-  print(makeJson(items));
+updateCart(String email, List<Item> items) async {
+  print(makeJson(email, items));
   final http.Response response = await http.post(
     'https://api.iterable.com/api/commerce/updateCart',
     headers: <String, String>{
       'Content-Type': 'application/json',
       'Api-Key': 'd5b52cd48d974cf5a5e79c7790c64b17'
     },
-    body: makeJson(items),
+    body: makeJson(email, items),
   );
   if (response.statusCode == 200) {
     print("You updated the CART");
@@ -41,15 +41,15 @@ updateCart(List<Item> items) async {
   }
 }
 
-trackPurchase(List<Item> items, double total) async {
-  print(makeJson(items, total: total));
+trackPurchase(String email, List<Item> items, double total) async {
+  print(makeJson(email, items, total: total));
   final http.Response response = await http.post(
     'https://api.iterable.com/api/commerce/trackPurchase',
     headers: <String, String>{
       'Content-Type': 'application/json',
       'Api-Key': 'd5b52cd48d974cf5a5e79c7790c64b17'
     },
-    body: makeJson(items, total: total),
+    body: makeJson(email, items, total: total),
   );
   if (response.statusCode == 200) {
     print("You made a PURCHASE");
@@ -60,14 +60,31 @@ trackPurchase(List<Item> items, double total) async {
   }
 }
 
-String makeJson(List<Item> items, {double total}) {
-  String mJson = """
+Future<http.Response> updateUser(String email) async {
+  print("updating user: " + email);
+  final http.Response response = await http.post(
+      'https://api.iterable.com/api/users/update',
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+        'Api-Key': 'd5b52cd48d974cf5a5e79c7790c64b17'
+      },
+      body: '''
+    {
+      "email": "$email"
+    }
+    ''');
+  print(response.statusCode.toString());
+  return response;
+}
+
+String makeJson(String email, List<Item> items, {double total}) {
+  String mJson = '''
   {
     "user": {
-      "email": "noman.hamlani@iterable.com"
+      "email": "$email"
     },
     "items": [  
-  """;
+  ''';
 
   for (var i = 0; i < items.length; i++) {
     mJson += items[i].toString();
@@ -78,7 +95,7 @@ String makeJson(List<Item> items, {double total}) {
   }
   mJson += "]";
   if (total != null) {
-    mJson += ""","total" : $total""";
+    mJson += ''',"total" : $total''';
   }
   mJson += "}";
   return mJson;

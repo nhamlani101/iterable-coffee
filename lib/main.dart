@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => CartModel(),
       child: MaterialApp(
+        color: Color(0xFF34C3F2),
         title: 'Provider Demo',
         initialRoute: '/',
         routes: {

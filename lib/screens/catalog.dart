@@ -7,23 +7,29 @@ class MyCatalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Iterable Bottle Coffee"),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.shopping_cart),
-              onPressed: () => Navigator.pushNamed(context, '/cart'),
-            ),
-          ],
-        ),
-        body: ListView.separated(
-            padding: const EdgeInsets.all(8),
-            itemCount: catalog.length,
-            itemBuilder: (BuildContext content, int index) {
-              return CatalogListItem(catalog[index]);
-            },
-            separatorBuilder: (BuildContext context, int index) =>
-                const Divider()));
+      appBar: AppBar(
+        title: Text("Iterable Bottle Coffee"),
+        backgroundColor: Color(0xFF34C3F2),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () => Navigator.pushNamed(context, '/cart'),
+          ),
+        ],
+      ),
+      body: ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: catalog.length,
+          itemBuilder: (BuildContext content, int index) {
+            return CatalogListItem(catalog[index]);
+          },
+          separatorBuilder: (BuildContext context, int index) =>
+              const Divider()),
+      // floatingActionButton: FloatingActionButton(
+      //     onPressed: null,
+      //     backgroundColor: Color(0xFF34C3F2),
+      //     child: Icon(Icons.exit_to_app)),
+    );
   }
 }
 
