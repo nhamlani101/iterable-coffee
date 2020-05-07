@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/models/item.dart';
+import 'package:iterable_coffee/models/item.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_test_app/models/cart_model.dart';
+import 'package:iterable_coffee/models/cart_model.dart';
 
 class MyCatalog extends StatelessWidget {
   @override

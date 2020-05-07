@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/models/item.dart';
-import 'package:flutter_test_app/util/iterable_functions.dart';
+import 'package:iterable_coffee/models/item.dart';
+import 'package:iterable_coffee/util/iterable_functions.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_test_app/models/cart_model.dart';
+import 'package:iterable_coffee/models/cart_model.dart';
 
 class MyCart extends StatelessWidget {
   @override

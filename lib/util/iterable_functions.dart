@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_test_app/models/item.dart';
+import 'package:iterable_coffee/models/item.dart';
 import 'package:http/http.dart' as http;
 
 trackEvent() async {

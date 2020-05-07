@@ -18,4 +18,3 @@ Flutter
 
 ![Login Screen](screenshots/login_screen.png)
 ![Cart Screen](screenshots/cart_screen.png)
-
